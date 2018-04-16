@@ -34,14 +34,14 @@ class Node(object):
             self.rightChild.getMax()
 
 
-    def traverseInOrder(self):
+    def traverseInorder(self):
         if self.leftChild is not None:
-            self.leftChild.traverseInOrder()
+            self.leftChild.traverseInorder()
 
         print(self.data)
 
         if self.rightChild is not None:
-            self.rightChild.traverseInOrder()
+            self.rightChild.traverseInorder()
 
 
     def remove(self,data,parentNode):
@@ -63,7 +63,7 @@ class Node(object):
                 else:
                     tempNode = self.rightChild
 
-                parentNode = self.rightChild
+                parentNode.leftChild = tempNode
 
             elif parentNode.rightchild == self:
                 if self.leftChild is not None:
